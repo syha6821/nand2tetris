@@ -2,6 +2,7 @@
 가상 로직게이트, cpu, 메모리, 모니터와 그 위에서 작동하는 어셈블리, 언어 구현
 
 [nand2tetris 홈페이지](https://www.nand2tetris.org/)
+
 nand2tetris 란 이름에서 볼 수 있듯이 nand 게이트 부터 tetris 가 돌아가는 컴퓨터를 단계적으로 만드는 코스 입니다.
 
 이 repository 에서는 그 중 part 1 - hardware platform 을 제작하는 파트의 코드와 설명을 담고 있습니다.

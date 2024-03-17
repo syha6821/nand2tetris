@@ -25,4 +25,4 @@ projects/07 에서는 java 의 virtual machine 과 비슷한 VM을 학습하고 
 
 projects/08 에서는 이전 챕터에서 만들었던 VM Translator 의 기능을 추가하는 작업을 했습니다.
 
-projects/09 에서는 
+projects/09 에서는 간단한 Coin 뒤집기 게임을 VM Translator 위에서 동작하는 Java와 비슷한 Jack 이라는 언어를 통해 만들었습니다.

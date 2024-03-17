@@ -21,7 +21,7 @@ projects/05 에서는 ALU 와 메모리, 레지스터를 조합하여 CPU 를 �
 
 projects/06 에서는 python 을 통해 binary 코드를 assembly 로 바꾸는 assembler 를 만들어 보았습니다.
 
-projects/07 에서는 java 의 virtual machine 과 비슷한 VM을 학습하고 만들어보았습니다. 이전에 만들었던 어셈블리를 VM 언어로 컴파일하는 작업입니다. (VM Translator는 main directory 에 있습니다. (nand2tetris/VM_Translator_Java)
+projects/07 에서는 java 의 virtual machine 과 비슷한 VM을 학습하고 만들어보았습니다. 이전에 만들었던 어셈블리를 VM 언어(java 의 byte코드와 비슷한 역할)로 컴파일하는 작업입니다. (VM Translator는 main directory 에 있습니다. (nand2tetris/VM_Translator_Java)
 
 projects/08 에서는 이전 챕터에서 만들었던 VM Translator 의 기능을 추가하는 작업을 했습니다.
 

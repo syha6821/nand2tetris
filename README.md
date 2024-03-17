@@ -27,11 +27,31 @@ https://github.com/syha6821/nand2tetris/assets/83122197/725d6773-1605-47a6-91a7-
 
 projects/03 에서는 이전에 만들었던 게이트들을 조합하여 RAM8, RAM64,Register, PC(Program Counter), Bit 를 만들었습니다. 그리고 이를 확장하여 RAM512, RAM4K, RAM16K 를 만들었습니다.
 
+PC 영상
+
+https://github.com/syha6821/nand2tetris/assets/83122197/bf7ab203-7b40-46bc-b8fa-a7d4b3d22f17
+
+
 projects/04 에서는 asm(어셈블리어)를 통해 간단한 모니터 동작과 곱셈을 구현했습니다.
 
-projects/05 에서는 ALU 와 메모리, 레지스터를 조합하여 CPU 를 만들어보고 그 위에서 작동하는 간단한 binary 코드를 동작시켜 보았습니다.
+간단한 모니터 동작
 
-projects/06 에서는 python 을 통해 binary 코드를 assembly 로 바꾸는 assembler 를 만들어 보았습니다.
+
+https://github.com/syha6821/nand2tetris/assets/83122197/374d8900-a309-4904-a7a0-aacf67cee80d
+
+
+
+projects/05 에서는 ALU 와 메모리, 레지스터를 조합하여 CPU 를 만들어보고 그 위에서 작동하는 간단한 assembly 코드를 동작시켜 보았습니다.
+
+assembly 로 구현한 간단한 add
+
+
+https://github.com/syha6821/nand2tetris/assets/83122197/60859fed-e96f-458c-ae10-223bd31c1d44
+
+
+projects/06 에서는 python 을 통해 assembly 코드를 assembly 로 바꾸는 assembler 를 만들어 보았습니다.
+
+projects/06 에 python 코드와 그 하위 폴더에 assembler 로 asm
 
 projects/07 에서는 java 의 virtual machine 과 비슷한 VM을 학습하고 만들어보았습니다. 이전에 만들었던 어셈블리를 VM 언어(java 의 byte코드와 비슷한 역할)로 컴파일하는 작업입니다. (VM Translator는 main directory 에 있습니다. (nand2tetris/VM_Translator_Java)
 

@@ -13,8 +13,16 @@ And, And16, DMux, Dmux4Way, Dmux8Way, Mux, Mux16, Mux4Way16, Mux8Way16, Not, Not
 
 projects/02 에서는 이전에 만들었던 게이트들을 조합하여 Add16, FullAdder, HalfAdder, Inc16 게이트들을 만들고 이를 통해 ALU(arithmetic logic unit) 를 만들었습니다.
 
-projects/03 에서는 이전에 만들었던 게이트들을 조합하여 RAM8, RAM64,Register, PC, Bit 를 만들었습니다. 그리고 이를 확장하여 RAM512, RAM4K, RAM16K 를 만들었습니다.
+projects/03 에서는 이전에 만들었던 게이트들을 조합하여 RAM8, RAM64,Register, PC(Program Counter), Bit 를 만들었습니다. 그리고 이를 확장하여 RAM512, RAM4K, RAM16K 를 만들었습니다.
 
 projects/04 에서는 asm(어셈블리어)를 통해 간단한 모니터 동작과 곱셈을 구현했습니다.
 
-projects/05
+projects/05 에서는 ALU 와 메모리, 레지스터를 조합하여 CPU 를 만들어보고 그 위에서 작동하는 간단한 binary 코드를 동작시켜 보았습니다.
+
+projects/06 에서는 python 을 통해 binary 코드를 assembly 로 바꾸는 assembler 를 만들어 보았습니다.
+
+projects/07 에서는 java 의 virtual machine 과 비슷한 VM을 학습하고 만들어보았습니다. 이전에 만들었던 어셈블리를 VM 언어로 컴파일하는 작업입니다. (VM Translator는 main directory 에 있습니다. (nand2tetris/VM_Translator_Java)
+
+projects/08 에서는 이전 챕터에서 만들었던 VM Translator 의 기능을 추가하는 작업을 했습니다.
+
+projects/09 에서는 

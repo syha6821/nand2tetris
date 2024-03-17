@@ -11,14 +11,19 @@ projects 디렉토리에서는 각 챕터별 해결한 코드가 있습니다.
 projects/01 디렉토리에서는 파트 1 에서 hdl 언어 ( nand2tetris 코스에서 직접 만든 학습용 hardware description language ) 를 통해 제가 직접 구현한 *.hdl 코드들과 미리 코스에서 만들어 놓은 *.tst, *.cmp 파일들이 있습니다. ( tst 파일을 통해 hdl 코드를 실행시키면 cmp 파일과 hdl 프로그램 실행 결과로 만들어진 out 파일을 비교해 오류가 없는 hdl 코드인지 판단합니다. )
 And, And16, DMux, Dmux4Way, Dmux8Way, Mux, Mux16, Mux4Way16, Mux8Way16, Not, Not16, Or, Or16, Or8Way, Xor 로직 게이트를 구현하였습니다.
 
-AND 게이트 영상입니다.
+AND 게이트 영상
 
 
 https://github.com/syha6821/nand2tetris/assets/83122197/2b357d10-c3af-4597-81bb-e9afeb1a7081
 
-
-
 projects/02 에서는 이전에 만들었던 게이트들을 조합하여 Add16, FullAdder, HalfAdder, Inc16 게이트들을 만들고 이를 통해 ALU(arithmetic logic unit) 를 만들었습니다.
+
+ALU CHIP 영상
+
+
+https://github.com/syha6821/nand2tetris/assets/83122197/725d6773-1605-47a6-91a7-d17837dc7d76
+
+
 
 projects/03 에서는 이전에 만들었던 게이트들을 조합하여 RAM8, RAM64,Register, PC(Program Counter), Bit 를 만들었습니다. 그리고 이를 확장하여 RAM512, RAM4K, RAM16K 를 만들었습니다.
 

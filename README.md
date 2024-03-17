@@ -19,7 +19,7 @@ And, And16, DMux, Dmux4Way, Dmux8Way, Mux, Mux16, Mux4Way16, Mux8Way16, Not, Not
 
   https://github.com/syha6821/nand2tetris/assets/83122197/2b357d10-c3af-4597-81bb-e9afeb1a7081
 
-**projects/02 **
+**projects/02**
 - 이전에 만들었던 게이트들을 조합하여 Add16, FullAdder, HalfAdder, Inc16 게이트들을 만들고 이를 통해 ALU(arithmetic logic unit) 를 만들었습니다.
 
 - ALU CHIP 영상

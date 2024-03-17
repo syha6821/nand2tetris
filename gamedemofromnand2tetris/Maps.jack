@@ -1,0 +1,246 @@
+class Maps{
+  field int x,y,xp,yp,xsp,ysp,posx,posy,psx,psy,lvl,success;
+  field int direction;
+  field Char Chr;
+  field int kill;
+  constructor Maps new() {
+    let Chr = Char.new();
+    let kill=10;
+    return this;
+  }
+  method void moveChr(int a,int lvl) {
+    var char k;
+    let posx = Abs.Absolute(xp-x);
+    let posy = Abs.Absolute(yp-y);
+    let psx = Abs.Absolute(xsp-x);
+    let psy = Abs.Absolute(ysp-y);
+    //#################### Intro #############################################################################################
+    if (lvl =1){
+     if (direction = 1) { do Chr.moveUp(x,y,a);
+        if ((y-10) > 25){let y=y-100;let direction=0;}}
+     if (direction = 2) { do Chr.moveDown(x,y,50,a);
+        if ((y + 15) < 239){let y=y+50;}}
+     if (direction = 3) { do Chr.moveLeft(x,y,2,a);
+        if (x-2 >1){let x =x-2;}}
+     if (direction = 4) { do Chr.moveRight(x,y,2,a);
+        if ((x + 12) < 510){let x =x+2;}}
+    do Screen.setColor(true);
+    do Screen.drawCircle(xp,yp,20);
+    do Screen.setColor(false);
+    do Screen.drawCircle(xp,yp,18);
+     do Sys.wait(5);  // delays the next movement
+   if ((y + 15) < 239) {
+     let k = Keyboard.keyPressed();
+     if (k = 130) {
+       if (x-27 >1){do Chr.moveLeft(x,y,25,a);if (x >1){let x =x-25;}}}   // left arrow
+     if (k = 132) {
+       if ((x + 37) < 510){do Chr.moveRight(x,y,25,a);if ((x + 10) < 510){let x =x+25;}}}
+     do Sys.wait(100);
+     do Chr.moveDown(x,y,50,a);
+     let y=y+50;
+
+    }
+  }
+  //#################### LEV 1 ################################################################################################
+  if (lvl =2){
+   if (direction = 1) {
+    if ((x-2)<200){
+     if (y+10>180){
+         do Chr.Smljmp(x,y,18,a);
+         let y=y-25;
+       }
+     }
+    else{
+     do Chr.moveUp(x,y,a);
+      if ((y-10) > 25){let y=y-100;let direction=0;}}
+      if ((x-2)<200){
+       if (y+10<180){
+         do Chr.moveUp(x,y,a);
+          if ((y-10) > 25){let y=y-100;let direction=0;}
+       }}
+    }
+    //##
+/*   if (direction = 2) {
+      do Chr.moveDown(x,y,50,a);
+      if ((y + 15) < 239){let y=y+50;}}*/
+   if (direction = 3) { do Chr.moveLeft(x,y,2,a);
+      if (x-2 >1){let x =x-2;}}
+   if (direction = 4) { do Chr.moveRight(x,y,2,a);
+      if ((x + 12) < 510){let x =x+2;}}
+  do Screen.setColor(true);
+  do Screen.drawCircle(xp,yp,20);
+  do Chr.drawspike(xsp,ysp);
+  do Screen.setColor(false);
+  do Screen.drawCircle(xp,yp,18);
+   do Sys.wait(5);  // delays the next movement
+
+   if ((y + 15) < 239) {
+     let k = Keyboard.keyPressed();
+       if (k = 130) {
+         if (x-27 >1){do Chr.moveLeft(x,y,30,a);if (x >1){let x =x-30;}}}   // left arrow
+       if (k = 132) {
+         if ((x + 37) < 510){do Chr.moveRight(x,y,30,a);if ((x + 10) < 510){let x =x+30;}}}
+     do Sys.wait(100);
+         if((x-2)>200){
+           do Chr.moveDown(x,y,(((240-y)-15)/2),a);
+           let y=y+(((240-y)-15)/2);
+            do Sys.wait(50);
+           do Chr.moveDown(x,y,(((240-y)-15)/2),a);
+           let y=y+(((240-y)-15)/2);}
+         if((x-2)<200){
+           if ((y + 15) < 170) {
+             do Chr.moveDown(x,y,(((170-y)-15)/2),a);
+             let y=y+(((170-y)-15)/2);
+              do Sys.wait(50);
+             do Chr.moveDown(x,y,(((170-y)-15)/2),a);
+             let y=y+(((170-y)-15)/2);}
+           if((y + 15) > 180){
+             do Chr.moveDown(x,y,(((240-y)-15)),a);
+             let y=y+(((240-y)-15));}
+             }
+     if (psx<20){
+       if (psy<20){
+         do dispose();
+         let kill=0;
+         return;
+       }
+     }
+}
+/*
+    if((x-2)<200){
+     if ((y + 15) < 190) {
+    let k = Keyboard.keyPressed();
+    if (k = 130) {
+      if (x-27 >1){do Chr.moveLeft(x,y,25,a);if (x >1){let x =x-25;}}}   // left arrow
+    if (k = 132) {
+      if ((x + 37) < 510){do Chr.moveRight(x,y,25,a);if ((x + 10) < 510){let x =x+25;}}}
+    do Sys.wait(100);
+    do Chr.moveDown(x,y,a);
+    let y=y+50;
+  }
+}*/
+}
+  //#################### Exit Condition ################################################################################################
+  if (posy<30){
+  if (posx<30){
+      do dispose();
+      let success=1;
+      return;
+    }
+  }
+     return;
+    }
+
+  method void run(int a,int lvl) {
+     var char key;  // the key currently pressed by the user
+     var boolean exit;
+     let exit = false;
+
+     while (~exit) {
+        // waits for a key to be pressed
+        while (key = 0) {
+           let key = Keyboard.keyPressed();
+           do moveChr(a,lvl);
+
+           if (kill=0){
+             let exit = true;
+             return;}
+        }
+        if (key = 83)  { let exit = true; }     // s key
+      //  if (key = 90)  { do Chr.decSize(); } // z key
+      //  if (key = 88)  { do Chr.incSize(); } // x key
+        if (key = 131) { let direction = 1; }   // up arrow
+        if (key = 133) { let direction = 2; }   // down arrow
+        if (key = 130) { let direction = 3; }   // left arrow
+        if (key = 132) { let direction = 4; }   // right arrow
+        // waits for the key to be released
+        while (~(key = 0)) {
+           let key = Keyboard.keyPressed();
+           do moveChr(a,lvl);
+           if (success=1){
+             return;
+           }
+        }
+        if (key=0){
+           let direction=0;
+        }
+        if (kill=0){
+          let exit = true;
+          return;
+        }
+    } // while
+    return;
+  }
+  method void dispose() {
+     do Memory.deAlloc(this);
+     return;
+}
+method int getkill() {
+   return kill;
+}
+  method void Intro(int a) {
+    let kill=10;
+    do Screen.setColor(false);
+    do Screen.drawRectangle(0,0,511,255);
+    do dispose();
+    do Output.moveCursor(1,22);
+    do Output.printString("The broken portal");
+    do Output.printString("             lev: 00");
+    do Output.println();
+    let x = 42;
+    let y = 225;
+    let xp = 460;
+    let yp =150;
+    do Screen.setColor(true);
+    do Screen.drawRectangle(0,240,510,250);
+    do Screen.drawLine(0,24,510,24);
+    if (a =0){
+      do Chr.drawgirl(x,y);
+    }
+    else{
+      do Chr.drawdude(x,y);
+    }
+    //do Sys.wait(5000);
+    do Screen.drawCircle(xp,yp,20);
+    do Screen.setColor(false);
+    do Screen.drawCircle(xp,yp,18);
+    do run(a,1);
+    return;
+  }
+  method void lv1(int a) {
+    let kill=10;
+    let success=0;
+    do Screen.setColor(false);
+    do Screen.drawRectangle(0,0,511,255);
+    do dispose();
+    do Output.moveCursor(1,22);
+    do Output.printString("The broken portal");
+    do Output.printString("             lev: 01");
+    do Output.println();
+    let x = 42;
+    let y = 155;
+    let xp = 42;
+    let yp = 225;
+    let xsp = 188;
+    let ysp = 170;
+    do Screen.setColor(true);
+    do Screen.drawLine(0,24,510,24);
+    do Screen.drawRectangle(0,170,200,180);
+    do Screen.drawRectangle(70,240,511,250);
+    if (a =0){
+      do Chr.drawgirl(x,y);
+    }
+    else{
+      do Chr.drawdude(x,y);
+    }
+    //do Sys.wait(5000);
+      do Chr.drawspike(xsp,ysp);
+    do Screen.drawCircle(xp,yp,20);
+    do Screen.setColor(false);
+    do Screen.drawCircle(xp,yp,18);
+    do run(a,2);
+    //do Sys.wait(5000);
+    return;
+
+  }
+}

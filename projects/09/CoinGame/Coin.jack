@@ -1,0 +1,12 @@
+class Coin{
+    static String selectedSide;
+
+    function String getSelectedSide(){
+        return selectedSide;
+        }
+
+    function void setSelectedSide(String side){
+        let selectedSide = side;
+        return;
+        }
+    }

@@ -1,0 +1,11 @@
+class MathCoin{
+        function int modulo(int dividend, int divisor){
+            var int quotient;
+            var int remainder;
+
+            let quotient = dividend / divisor;
+            let remainder = dividend - (divisor * quotient);
+
+            return remainder;
+        }
+    }

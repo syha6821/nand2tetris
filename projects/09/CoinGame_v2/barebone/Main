@@ -1,0 +1,24 @@
+//never lose readiblity
+//never lose good naming
+//never lose never nesting
+//write readable code understandable without comment
+//seperate data and logic (aka.single responsibility)
+//!!write very easy to refactable and reusable code!!
+//Refactoring and Reusable example : add 2 player mode, add Restart, add draw(Coin is not fliped. It stands.)
+
+Main(){
+    Player player =  new player();
+    Player computer =  new player();
+    Coin coin =  new coin();
+
+    Game game = new Game(player, computer, coin);
+
+//start : Run Game step by step
+    game.start();
+    game.end();
+
+   //Which one should I choose? static start? or make instance and start?
+   //Decision : make instance because I will use states of the game.
+   
+   //After game ends.
+}

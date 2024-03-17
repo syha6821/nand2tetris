@@ -1,0 +1,74 @@
+function CoinGame.new 0
+push constant 4
+call Memory.alloc 1
+pop pointer 0
+call Player.new 0
+pop this 1
+call Player.new 0
+pop this 2
+push pointer 0
+return
+function CoinGame.getUser 0
+push argument 0
+pop pointer 0
+push this 1
+return
+function CoinGame.getCom 0
+push argument 0
+pop pointer 0
+push this 2
+return
+function CoinGame.startGame 0
+push argument 0
+pop pointer 0
+call GameScreen.showSplashScreen 0
+pop temp 0
+push constant 0
+return
+function CoinGame.pickCoin 1
+push argument 0
+pop pointer 0
+call GameScreen.showPickScreen 0
+pop local 0
+push argument 1
+push local 0
+call Player.setUserChoice 2
+pop temp 0
+call GameScreen.showCountDown 0
+pop temp 0
+push constant 0
+return
+function CoinGame.chooseWinner 2
+push argument 0
+pop pointer 0
+push this 1
+call Player.getUserChoice 1
+pop local 1
+push local 1
+push constant 0
+call String.charAt 2
+push constant 104
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+not
+pop local 0
+label IF_FALSE0
+push local 1
+push constant 0
+call String.charAt 2
+push constant 116
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 0
+pop local 0
+label IF_FALSE1
+push local 0
+call GameScreen.showResult 1
+pop temp 0
+push constant 0
+return

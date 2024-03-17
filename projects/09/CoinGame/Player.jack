@@ -1,0 +1,17 @@
+class Player{
+    field String userChoice;
+
+    constructor Player new(){
+        return this;
+        }
+
+    method void setUserChoice(String coinSide){
+            let userChoice = coinSide;
+            return;
+        }
+
+    method String getUserChoice(){
+            return userChoice;
+        }
+
+    }

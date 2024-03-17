@@ -1,0 +1,20 @@
+//Model represents the information (the data) of the application
+//and the business rules used to manipulate the data
+Coin{
+    private side
+
+    private String pickRandom(){
+        int randomOneOrTwo = random(0 or 1);
+        String pickedSide = randomOneOrTwo == 0 ? "head" 
+                                                : "tail"
+        return pickedSide
+    }
+
+    private void getSide(){
+        return this.side
+    }
+    
+    private void setSide(String side){
+        this.side = side
+    }
+}

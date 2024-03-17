@@ -1,0 +1,66 @@
+class Main{
+  function void main() {
+    var int x,c;
+    var Maps a;
+    var Skin Skins;
+    var int State;
+    let Skins = Skin.new();
+    let a=Maps.new();
+    do Help.Rules();
+    let c =Skins.select();
+    if (c=0){
+    do a.Intro(0);
+    do a.lv1(0);
+    let State= a.getkill();
+    while (State = 0){
+      do Output.moveCursor(10,25);
+      do Output.printString(" You died ");
+      do Output.moveCursor(11,25);
+      do Output.printString(" Restarting ");
+      do Sys.wait(1000);
+      do a.lv1(0);
+      let State= a.getkill();
+      }
+    }
+    else{
+    do a.Intro(1);
+    do a.lv1(1);
+    let State= a.getkill();
+    while (State =0){
+      do Output.moveCursor(10,25);
+      do Output.printString(" You died ");
+      do Output.moveCursor(12,25);
+      do Output.printString(" Restarting ");
+      do Sys.wait(1000);
+      do a.lv1(1);
+      let State= a.getkill();
+    }
+    }
+      do Screen.setColor(false);
+      do Screen.drawRectangle(0,0,511,255);
+      do Output.moveCursor(6,23);
+      do Output.printString("Thanks for playing!!");
+      do Output.moveCursor(10,24);
+      do Output.printString("Thats all for now");
+      do Output.moveCursor(12,22);
+      do Output.printString("More levels coming soon");
+      do Output.moveCursor(14,26);
+      do Output.printString("Stay tuned....");
+      do Sys.wait(5000);
+    //var Simulator Game;
+
+
+    //let Game = Simulator.new();
+
+
+//    do a.Intro();
+
+  //  do b.Prog(x);
+    //do Game.start
+    //let State = Game.St();
+    //if (State = 1){
+      //passed
+    //}
+   return;
+  }
+}

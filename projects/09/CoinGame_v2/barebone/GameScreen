@@ -1,0 +1,47 @@
+//View corresponds to elements of the uesr interface such as text,
+//checkbox items, and so forth
+GameScreen{
+    show(String gameState){
+        if("Splash"){
+            showSplash();
+        }else if("Pick"){
+            showPick();
+        }else if("Countdown"){
+            showCountdown();
+        }else if("Result"){
+            showResult();
+        }
+    }
+    
+    draw("coin",2300);
+    draw(name,location){
+        Bitmap image = new Bitmap("name")
+        int memAddress = 16384 + location;
+        for(address : image.addressArray ){
+            Memory.poke(address + address.x, address.y);
+        }
+    }
+
+    draw(coinImage,2300);
+    draw(Bitmap image,int location){
+        int memAddress = 16384 + location;
+        for(address : image.addressArray ){
+            Memory.poke(address + address.x, address.y);
+        }
+    }
+    
+    showSplash(){
+    }
+
+    showPick(){
+        
+    }
+
+    showCountdown(){
+        
+    }
+
+    showResult(){
+        
+    }
+}

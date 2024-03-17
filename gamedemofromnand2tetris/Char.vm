@@ -1,0 +1,702 @@
+function Char.new 0
+push constant 4
+call Memory.alloc 1
+pop pointer 0
+push pointer 0
+return
+function Char.drawspike 0
+push argument 0
+pop pointer 0
+push argument 1
+push argument 2
+push constant 10
+sub
+push argument 1
+push constant 4
+add
+push argument 2
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 4
+add
+push argument 2
+push argument 1
+push constant 8
+add
+push argument 2
+push constant 10
+sub
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 8
+add
+push argument 2
+push constant 10
+sub
+push argument 1
+push constant 12
+add
+push argument 2
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 4
+sub
+push argument 2
+push argument 1
+push argument 2
+push constant 10
+sub
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 8
+sub
+push argument 2
+push constant 10
+sub
+push argument 1
+push constant 4
+sub
+push argument 2
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 12
+sub
+push argument 2
+push argument 1
+push constant 8
+sub
+push argument 2
+push constant 10
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Char.drawdude 0
+push argument 0
+pop pointer 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push argument 1
+push argument 2
+push constant 2
+add
+push argument 1
+push constant 10
+add
+push argument 2
+push constant 14
+add
+call Screen.drawRectangle 4
+pop temp 0
+push argument 1
+push constant 5
+add
+push argument 2
+push constant 5
+sub
+push constant 5
+call Screen.drawCircle 3
+pop temp 0
+push constant 0
+return
+function Char.drawgirl 0
+push argument 0
+pop pointer 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push argument 1
+push argument 2
+push constant 2
+add
+push argument 1
+push argument 2
+push constant 14
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 10
+add
+push argument 2
+push constant 2
+add
+push argument 1
+push constant 10
+add
+push argument 2
+push constant 14
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push argument 2
+push constant 2
+add
+push argument 1
+push constant 10
+add
+push argument 2
+push constant 2
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 5
+add
+push argument 2
+push constant 5
+sub
+push constant 5
+call Screen.drawCircle 3
+pop temp 0
+push argument 1
+push constant 2
+sub
+push argument 2
+push constant 17
+sub
+push argument 1
+push constant 12
+add
+push argument 2
+push constant 12
+sub
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 2
+sub
+push argument 2
+push constant 17
+sub
+push argument 1
+push constant 2
+sub
+push argument 2
+push constant 12
+sub
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 2
+sub
+push argument 2
+push constant 12
+sub
+push argument 1
+push constant 12
+add
+push argument 2
+push constant 17
+sub
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 12
+add
+push argument 2
+push constant 17
+sub
+push argument 1
+push constant 12
+add
+push argument 2
+push constant 12
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Char.drawcell 0
+push argument 0
+pop pointer 0
+push argument 1
+push argument 2
+push argument 1
+push constant 2
+add
+push argument 2
+push constant 50
+add
+call Screen.drawRectangle 4
+pop temp 0
+push argument 1
+push argument 2
+push argument 1
+push constant 30
+add
+push argument 2
+push constant 2
+add
+call Screen.drawRectangle 4
+pop temp 0
+push argument 1
+push constant 30
+add
+push argument 2
+push argument 1
+push constant 32
+add
+push argument 2
+push constant 50
+add
+call Screen.drawRectangle 4
+pop temp 0
+push argument 1
+push argument 2
+push argument 1
+push argument 2
+push constant 50
+sub
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 10
+add
+push argument 2
+push argument 1
+push constant 10
+add
+push argument 2
+push constant 50
+sub
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 20
+add
+push argument 2
+push argument 1
+push constant 20
+add
+push argument 2
+push constant 50
+sub
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 30
+add
+push argument 2
+push argument 1
+push constant 30
+add
+push argument 2
+push constant 50
+sub
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
+function Char.moveDown 0
+push argument 0
+pop pointer 0
+push argument 2
+push constant 15
+add
+push constant 239
+lt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push argument 1
+push constant 2
+sub
+push argument 2
+push constant 17
+sub
+push argument 1
+push constant 12
+add
+push argument 2
+push constant 14
+add
+call Screen.drawRectangle 4
+pop temp 0
+push argument 4
+push constant 0
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push pointer 0
+push argument 1
+push argument 2
+push argument 3
+add
+call Char.drawgirl 3
+pop temp 0
+goto IF_END1
+label IF_FALSE1
+push pointer 0
+push argument 1
+push argument 2
+push argument 3
+add
+call Char.drawdude 3
+pop temp 0
+label IF_END1
+label IF_FALSE0
+push constant 0
+return
+function Char.moveLeft 0
+push argument 0
+pop pointer 0
+push argument 1
+push constant 2
+sub
+push constant 1
+gt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push argument 1
+push constant 2
+sub
+push argument 2
+push constant 17
+sub
+push argument 1
+push constant 12
+add
+push argument 2
+push constant 14
+add
+call Screen.drawRectangle 4
+pop temp 0
+push argument 4
+push constant 0
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push pointer 0
+push argument 1
+push argument 3
+sub
+push argument 2
+call Char.drawgirl 3
+pop temp 0
+goto IF_END1
+label IF_FALSE1
+push pointer 0
+push argument 1
+push argument 3
+sub
+push argument 2
+call Char.drawdude 3
+pop temp 0
+label IF_END1
+label IF_FALSE0
+push constant 0
+return
+function Char.moveRight 0
+push argument 0
+pop pointer 0
+push argument 1
+push constant 12
+add
+push constant 510
+lt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push argument 1
+push constant 2
+sub
+push argument 2
+push constant 17
+sub
+push argument 1
+push constant 12
+add
+push argument 2
+push constant 14
+add
+call Screen.drawRectangle 4
+pop temp 0
+push argument 4
+push constant 0
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push pointer 0
+push argument 1
+push argument 3
+add
+push argument 2
+call Char.drawgirl 3
+pop temp 0
+goto IF_END1
+label IF_FALSE1
+push pointer 0
+push argument 1
+push argument 3
+add
+push argument 2
+call Char.drawdude 3
+pop temp 0
+label IF_END1
+label IF_FALSE0
+push constant 0
+return
+function Char.Smljmp 1
+push argument 0
+pop pointer 0
+push argument 2
+push constant 10
+sub
+push argument 3
+gt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push argument 1
+push constant 2
+sub
+push argument 2
+push constant 17
+sub
+push argument 1
+push constant 12
+add
+push argument 2
+push constant 14
+add
+call Screen.drawRectangle 4
+pop temp 0
+push argument 4
+push constant 0
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push pointer 0
+push argument 1
+push argument 2
+push argument 3
+sub
+call Char.drawgirl 3
+pop temp 0
+goto IF_END1
+label IF_FALSE1
+push pointer 0
+push argument 1
+push argument 2
+push argument 3
+sub
+call Char.drawdude 3
+pop temp 0
+label IF_END1
+label IF_FALSE0
+push constant 50
+call Sys.wait 1
+pop temp 0
+push constant 0
+return
+function Char.moveUp 1
+push argument 0
+pop pointer 0
+push argument 2
+push constant 10
+sub
+push constant 25
+gt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push argument 1
+push constant 2
+sub
+push argument 2
+push constant 17
+sub
+push argument 1
+push constant 12
+add
+push argument 2
+push constant 14
+add
+call Screen.drawRectangle 4
+pop temp 0
+push argument 3
+push constant 0
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push pointer 0
+push argument 1
+push argument 2
+push constant 25
+sub
+call Char.drawgirl 3
+pop temp 0
+goto IF_END1
+label IF_FALSE1
+push pointer 0
+push argument 1
+push argument 2
+push constant 25
+sub
+call Char.drawdude 3
+pop temp 0
+label IF_END1
+push constant 50
+call Sys.wait 1
+pop temp 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push argument 1
+push constant 2
+sub
+push argument 2
+push constant 42
+sub
+push argument 1
+push constant 12
+add
+push argument 2
+push constant 11
+sub
+call Screen.drawRectangle 4
+pop temp 0
+push argument 3
+push constant 0
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push pointer 0
+push argument 1
+push argument 2
+push constant 50
+sub
+call Char.drawgirl 3
+pop temp 0
+goto IF_END2
+label IF_FALSE2
+push pointer 0
+push argument 1
+push argument 2
+push constant 50
+sub
+call Char.drawdude 3
+pop temp 0
+label IF_END2
+push constant 50
+call Sys.wait 1
+pop temp 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push argument 1
+push constant 2
+sub
+push argument 2
+push constant 67
+sub
+push argument 1
+push constant 12
+add
+push argument 2
+push constant 36
+sub
+call Screen.drawRectangle 4
+pop temp 0
+push argument 3
+push constant 0
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push pointer 0
+push argument 1
+push argument 2
+push constant 75
+sub
+call Char.drawgirl 3
+pop temp 0
+goto IF_END3
+label IF_FALSE3
+push pointer 0
+push argument 1
+push argument 2
+push constant 75
+sub
+call Char.drawdude 3
+pop temp 0
+label IF_END3
+push constant 50
+call Sys.wait 1
+pop temp 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push argument 1
+push constant 2
+sub
+push argument 2
+push constant 92
+sub
+push argument 1
+push constant 12
+add
+push argument 2
+push constant 61
+sub
+call Screen.drawRectangle 4
+pop temp 0
+push argument 3
+push constant 0
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push pointer 0
+push argument 1
+push argument 2
+push constant 100
+sub
+call Char.drawgirl 3
+pop temp 0
+goto IF_END4
+label IF_FALSE4
+push pointer 0
+push argument 1
+push argument 2
+push constant 100
+sub
+call Char.drawdude 3
+pop temp 0
+label IF_END4
+label IF_FALSE0
+push constant 0
+return

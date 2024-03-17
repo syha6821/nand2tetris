@@ -1,0 +1,76 @@
+//Controller handless user actions such as keystrokes and mouse movements
+//and pipes them into the model or view as required
+Game{
+    //attributes
+    private player
+    private coin
+    
+    //Realized setState is a bad idea. Because there is no detector for chaning value of state in Jack Language.
+    //And setState calls another function like splash() and it call a setState again and so on...
+
+    Game(Player player, Coin coin){
+        this.player = player;
+        this.coin = coin;
+    }
+    
+    start(){
+        //for consistency , I did not use GameScreen.show("Splash")
+        splash();
+        pick();
+        countdown();
+        result();
+    }
+    
+    //Is this a best code?
+    private waitUntilEnter(){
+        boolean exit = false;
+        if(keyboard.Input() == enter){
+            exit = true
+        }
+    }
+
+    //Is this a best code?
+    private String listenArrowKey(){
+        while(!exit){
+            char keyboardInput = keyboard.input();
+            GameScreen.changeArrow(keyboardInput)
+
+            pickedSide = keyboardInput
+
+            if(keyboardInput == enter){
+                exit = true
+            }
+        }
+        return pickedSide
+    }
+    
+    splash(){
+        GameScreen.show("Splash")
+
+        waitUntilEnter()
+    }
+    
+    pick(){
+        GameScreen.show("Pick")
+
+        playerPick = listenArrowKey()
+        player.getCoin().setSide(playerPick)
+
+        randomPick = coin.pickRandom()
+        computer.getCoin().setSide(randomPick)
+    }
+    
+    countdown(){
+        GameScreen.show("Countdown")
+    }
+
+    result(){
+        didPlayerWin = ( player.getCoin().getSide() == coin.getCoin().getSide() ) ? true 
+                                                                                  : false
+        GameScreen.show("result",comment.getCoin().getSide(),didPlayerWin)
+    }
+    
+    end(){
+        //something like malloc
+    }
+}

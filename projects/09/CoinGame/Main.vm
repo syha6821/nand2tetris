@@ -1,0 +1,16 @@
+function Main.main 1
+call CoinGame.new 0
+pop local 0
+push local 0
+call CoinGame.startGame 1
+pop temp 0
+push local 0
+push local 0
+call CoinGame.getUser 1
+call CoinGame.pickCoin 2
+pop temp 0
+push local 0
+call CoinGame.chooseWinner 1
+pop temp 0
+push constant 0
+return

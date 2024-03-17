@@ -1,0 +1,20 @@
+function void draw(int location) {
+	let memAddress = 16384+location;
+	do Memory.poke(memAddress+0, 0);
+	do Memory.poke(memAddress+32, 2016);
+	do Memory.poke(memAddress+64, 2064);
+	do Memory.poke(memAddress+96, 5064);
+	do Memory.poke(memAddress+128, 9252);
+	do Memory.poke(memAddress+160, 10244);
+	do Memory.poke(memAddress+192, 10244);
+	do Memory.poke(memAddress+224, 10244);
+	do Memory.poke(memAddress+256, 10244);
+	do Memory.poke(memAddress+288, 10244);
+	do Memory.poke(memAddress+320, 10244);
+	do Memory.poke(memAddress+352, 9252);
+	do Memory.poke(memAddress+384, 5064);
+	do Memory.poke(memAddress+416, 2064);
+	do Memory.poke(memAddress+448, 2016);
+	do Memory.poke(memAddress+480, 0);
+	return;
+}

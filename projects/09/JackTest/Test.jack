@@ -1,0 +1,17 @@
+class Test{
+    field String test;
+
+    constructor Test new(){
+    let test = "good";
+    return this;
+        }
+
+    method String getTest(){
+        return test;
+        }
+
+    method void setTest(String testParameter){
+        let test = testParameter;
+        return;
+        }
+}

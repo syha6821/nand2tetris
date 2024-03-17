@@ -1,0 +1,49 @@
+class CoinGame{
+    field String stateOfGame;
+    field Player user;
+    field Player com;
+    field Coin coin;
+
+    constructor CoinGame new() {
+            let user = Player.new();
+            let com = Player.new();
+            
+            return this;
+        }
+    method Player getUser(){
+        return user;
+        }
+
+    method Player getCom(){
+        return com;
+        }
+
+    method void startGame(){
+        do GameScreen.showSplashScreen();
+        return;
+        }
+
+    method void pickCoin(Player user){
+        var String choosenSide;
+        let choosenSide = GameScreen.showPickScreen();
+        do user.setUserChoice(choosenSide);
+        do GameScreen.showCountDown();
+        return;
+        }
+
+    method void chooseWinner(){
+        var boolean win;
+        var String userChoice;
+        let userChoice = user.getUserChoice();
+
+        if(userChoice.charAt(0) = 104){
+                let win = true;
+            }
+        if(userChoice.charAt(0) = 116){
+                let win = false;
+            }
+        do GameScreen.showResult(win);
+        return;
+        }
+
+    }

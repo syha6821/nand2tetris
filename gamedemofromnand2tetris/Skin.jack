@@ -1,0 +1,34 @@
+class Skin{
+  field Char Chr;
+  constructor Skin new() {
+    let Chr = Char.new();
+    return this;
+}
+  method int select(){
+  var char key;  // the key currently pressed by the user
+  var boolean exit;
+  let exit = false;
+  do Screen.setColor(false);
+  do Screen.drawRectangle(0,0,511,255);
+  do Screen.setColor(true);
+  do Output.moveCursor(6,24);
+  do Output.printString("Select your char");
+  do Chr.drawdude(150,125);
+  do Output.moveCursor(16,15);
+  do Output.printString("Press (1)");
+  do Chr.drawgirl(350,125);
+  do Output.moveCursor(16,40);
+  do Output.printString("Press (2)");
+    while (~exit) {
+        let key = Keyboard.keyPressed();
+        if (key = 49)  { let exit = true;do dispose(); return 1;}
+        if (key = 50)  { let exit = true;do dispose(); return 0;}
+      }
+  do dispose();
+  return 10;
+}
+method void dispose() {
+   do Memory.deAlloc(this);
+   return;
+}
+}

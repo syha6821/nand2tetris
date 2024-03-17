@@ -1,0 +1,19 @@
+//Model represents the information (the data) of the application
+//and the business rules used to manipulate the data
+Player{
+    private pickedSide
+    private Coin coin
+    
+    constructor Player(){
+        this.coin = new Coin()
+    }
+    
+    getCoin(){
+        
+    }
+    
+    setPickedSide(String leftOrRight){
+        String pickedSide = leftOrRight == "Right" ? "head" 
+                                                   : "tail"
+    }
+}

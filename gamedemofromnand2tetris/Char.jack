@@ -1,0 +1,166 @@
+class Char {
+  field int x,y; // screen location of the square's top-left corner
+  field int xp,yp;
+   constructor Char new() {
+     return this;
+   }
+   method void drawspike(int i,int j){
+      do Screen.drawLine(i,j-10,i+4,j);
+      do Screen.drawLine(i+4,j,i+8,j-10);
+      do Screen.drawLine(i+8,j-10,i+12,j);
+      do Screen.drawLine(i-4,j,i,j-10);
+      do Screen.drawLine(i-8,j-10,i-4,j);
+      do Screen.drawLine(i-12,j,i-8,j-10);
+      return;
+   }
+   method void drawdude(int i,int j){
+     // draw dude
+     do Screen.setColor(true);
+     do Screen.drawRectangle(i,j+2,i+10,j+14);
+     do Screen.drawCircle(i+5,j-5,5);
+     //do Screen.drawRectangle(i-4,j-10,i+14,j-6);
+     //do Screen.drawLine(i,j-15,i+10,j-15);
+     return;
+   }
+   method void drawgirl(int i,int j){
+     // draw dude
+     do Screen.setColor(true);
+     do Screen.drawLine(i,j+2,i,j+14);
+     do Screen.drawLine(i+10,j+2,i+10,j+14);
+     do Screen.drawLine(i,j+2,i+10,j+2);
+     do Screen.drawCircle(i+5,j-5,5);
+     do Screen.drawLine(i-2,j-17,i+12,j-12);
+     do Screen.drawLine(i-2,j-17,i-2,j-12);
+     do Screen.drawLine(i-2,j-12,i+12,j-17);
+     do Screen.drawLine(i+12,j-17,i+12,j-12);
+     return;
+   }
+   method void drawcell(int i,int j){
+     do Screen.drawRectangle(i,j,i+2,j+50);
+     do Screen.drawRectangle(i,j,i+30,j+2);
+     do Screen.drawRectangle(i+30,j,i+32,j+50);
+     do Screen.drawLine(i,j,i,j-50);
+     do Screen.drawLine(i+10,j,i+10,j-50);
+     do Screen.drawLine(i+20,j,i+20,j-50);
+     do Screen.drawLine(i+30,j,i+30,j-50);
+     //do Screen.drawLine(i+40,j,i+40,j-50);
+     //do Screen.drawLine(i+50,j,i+50,j-50);
+     return;
+   }
+   method void moveDown(int x,int y, int a,int chr) {
+      if ((y + 15) < 239) {
+        do Screen.setColor(false);
+        do Screen.drawRectangle(x-2, y-17, x +12, y +14);
+        if (chr =0){
+          do drawgirl(x,y+a);
+         }
+        else{
+          do drawdude(x, y+a);
+         }
+      }
+      return;
+    }
+    method void moveLeft(int x,int y,int q,int chr) {
+       if (x-2 > 1) {
+        do Screen.setColor(false);
+         do Screen.drawRectangle(x-2, y-17, x +12, y +14);
+         if (chr =0){
+           do drawgirl(x-q,y);
+          }
+         else{
+           do drawdude(x-q, y);
+          }
+       }
+       return;
+    }
+  /*  method void followLeft(int x,int y,int q) {
+       if (x > 1) {
+          do Screen.setColor(false);
+         do Screen.drawRectangle(x-2, y-17, x +12, y +14);
+          do drawgirl(x-q, y,true);
+       }
+       return;
+    }*/
+    method void moveRight(int x,int y,int q,int chr) {
+       if ((x + 12) < 510) {
+          do Screen.setColor(false);
+          do Screen.drawRectangle(x-2, y-17, x +12, y +14);
+          if (chr =0){
+            do drawgirl(x+q,y);
+           }
+          else{
+            do drawdude(x+q, y);
+           }
+
+       }
+       return;
+     }
+/*    }
+    method void followRight(int x,int y,int q) {
+       if ((x + 10) < 510) {
+          do Screen.setColor(false);
+           do Screen.drawRectangle(x-2, y-17, x +12, y +14);
+          do drawgirl(x+q, y,true);
+
+       }
+       return;
+    }*/
+    method void Smljmp(int x,int y ,int a,int chr) {
+          var char key;
+       if ((y-10) > a) {
+          do Screen.setColor(false);
+          do Screen.drawRectangle(x-2, y-17, x +12, y +14);
+          if (chr =0){
+            do drawgirl(x,y-a);
+           }
+           else{
+             do drawdude(x, y-a);
+          }}
+          do Sys.wait(50);
+          return;}
+    method void moveUp(int x,int y ,int chr) {
+          var char key;
+       if ((y-10) > 25) {
+          do Screen.setColor(false);
+          do Screen.drawRectangle(x-2, y-17, x +12, y +14);
+          if (chr =0){
+            do drawgirl(x,y-25);
+           }
+          else{
+            do drawdude(x, y-25);
+           }
+          do Sys.wait(50);
+          do Screen.setColor(false);
+          do Screen.drawRectangle(x-2, y-42, x +12, y -11);
+          if (chr =0){
+            do drawgirl(x,y-50);
+           }
+          else{
+            do drawdude(x, y-50);
+           }
+          do Sys.wait(50);
+          do Screen.setColor(false);
+          do Screen.drawRectangle(x-2, y-67, x +12, y -36);
+          if (chr =0){
+            do drawgirl(x,y-75);
+           }
+          else{
+            do drawdude(x, y-75);
+           }
+          do Sys.wait(50);
+          do Screen.setColor(false);
+          do Screen.drawRectangle(x-2, y-92, x +12, y -61);
+          if (chr =0){
+            do drawgirl(x,y-100);
+           }
+          else{
+            do drawdude(x, y-100);
+           }
+          //go down
+
+
+
+       }
+       return;
+    }
+}

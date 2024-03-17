@@ -1,0 +1,11 @@
+class Main{
+        function void main(){
+
+                var CoinGame game;
+                let game = CoinGame.new();
+                do game.startGame();
+                do game.pickCoin(game.getUser());
+                do game.chooseWinner();
+                return;
+            }
+    }
